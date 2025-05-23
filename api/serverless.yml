@@ -13,6 +13,7 @@ provider:
             - s3:GetObject
           Resource: 
             - arn:aws:s3:::project-image-classification-models/vgg16_model.keras
+            - arn:aws:s3:::project-image-classification-models/TL_DN201_M4.keras
   ecr:
     images:
       classifyImage:
@@ -24,6 +25,10 @@ functions:
     image:
       name: classifyImage
     events:
+      - http:
+          path: classify
+          method: options
+          cors: true
       - http:
           path: classify
           method: post

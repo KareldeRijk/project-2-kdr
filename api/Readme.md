@@ -20,23 +20,6 @@ pip install -r requirements.txt
 ```bash
 npm install
 ```
-
-## Development
-
-### Local Development
-
-1. Run the python script
-````
-python main.py
-````
-
-2. Test it
-```
-curl -X POST http://0.0.0.0:8000/ \
-  -H "Content-Type: application/json" \
-  -d '{"image": "'"$(base64 < dog.jpeg | tr -d '\n')"'"}'
-```
-
 ## Deployment
 
 ```bash
@@ -45,7 +28,6 @@ serverless deploy
 
 ## Project Structure
 
-- `main.py` - Main application logic
 - `handler.py` - Lambda handler for Serverless
 - `serverless.yml` - Serverless Framework configuration
 - `Dockerfile` - Docker configuration
