@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <div className="bg-white p-8 pb-8 rounded-lg shadow-md">
+      <div className="bg-white p-8 pb-8 rounded-lg shadow-md max-w-xl">
         <h1 className="text-2xl font-bold text-gray-800 mb-4">Image class predictions</h1>
         <p className="text-red">Our pre-trained model <b>DenseNet201</b> is able to predict 10 classes:</p>
         <b>airplanes, automobiles, birds, cats, deers, dogs, frogs, horses, ships and trucks</b>
@@ -89,7 +89,12 @@ function App() {
         </div>
         <div className='flex justify-between' style={{height: 24}}>
           {error && (<p>An error has occurred!</p>)}
-          {isLoading && (<i>Loading the results...</i>)}
+          {isLoading && (
+            <div className="flex items-center space-x-4">
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-500"></div>
+              <span className="text-gray-600">Loading result...</span>
+            </div>
+          )}
           {!error && !isLoading && predictions.map(pred => (
             <b>
               {pred.class.charAt(0).toUpperCase() + pred.class.slice(1)}: {(pred.confidence * 100).toFixed(1)}%
