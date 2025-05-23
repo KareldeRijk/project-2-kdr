@@ -62,11 +62,14 @@ Track model performance and experiments:
 https://docs.google.com/spreadsheets/d/1v45NI5V2AYiYLz7QQBh2qrkOevQ912NchR29SLfgEtc/edit?usp=sharing
 
 ## Final Models
-DenseNet201<br />
-https://project-image-classification-models.s3.eu-central-1.amazonaws.com/TL_DN201_M4.keras<br /><br />
-
+Basic CNN<br />
+https://project-image-classification-models.s3.eu-central-1.amazonaws.com/Basic_CNN_M4.keras
+<br /><br />
 VGG16<br />
 https://project-image-classification-models.s3.eu-central-1.amazonaws.com/vgg16_model.keras
+<br /><br />
+DenseNet201<br />
+https://project-image-classification-models.s3.eu-central-1.amazonaws.com/TL_DN201_M4.keras
 
 ## Getting Started
 1. Clone the repository
