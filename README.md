@@ -10,21 +10,31 @@ File Structure:
 ├── api/                    # API implementation for model serving
 ├── web/                    # Web interface for model interaction
 ├── notebooks/              # Jupyter notebooks containing model development, training, and evaluation
+│   ├── Base CNN Model/     # Basic CNN implementation and training
+│   ├── VGG16/              # VGG16 transfer learning implementation
+│   ├── DenseNet201/        # DenseNet201 transfer learning implementation
+│   └── preprocessing.ipynb # Data preprocessing and preparation
 ```
 
 ### Model Architecture
-The project implements two different approaches:
+The project implements three different approaches:
 
 1. **Custom CNN Model**
    - Basic convolutional neural network
    - Data augmentation with random flips and rotations
-   - Achieved accuracy: ~45%
+   - Achieved accuracy: ~85%
 
 2. **VGG16 Transfer Learning**
    - Pre-trained VGG16 model as base
    - Fine-tuned for CIFAR-10 classification
    - Achieved accuracy: ~85%
    - Best performance without freezing layers
+
+3. **DenseNet201 Transfer Learning**
+   - Pre-trained DenseNet201 model as base
+   - Fine-tuned for CIFAR-10 classification
+   - Achieved accuracy: ~93%
+   - Best overall performance with optimized hyperparameters
 
 ### Key Features
 - Data preprocessing and normalization
