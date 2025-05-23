@@ -1,0 +1,38 @@
+service: image-classification-api-3
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  region: eu-central-1
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - s3:GetObject
+          Resource: 
+            - arn:aws:s3:::project-image-classification-models/vgg16_model.keras
+            - arn:aws:s3:::project-image-classification-models/TL_DN201_M4.keras
+  ecr:
+    images:
+      classifyImage:
+        path: .
+  architecture: x86_64
+
+functions:
+  classifyImage:
+    image:
+      name: classifyImage
+    events:
+      - http:
+          path: classify
+          method: options
+          cors: true
+      - http:
+          path: classify
+          method: post
+          cors: true
+    timeout: 30
+    memorySize: 3096
+    provisionedConcurrency: 1
