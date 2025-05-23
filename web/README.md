@@ -12,3 +12,6 @@ This web application is an image recognition app developed with React, TypeScrip
 - Automatic image recognition through AI model
 - Display of prediction results (e.g., "cat", "dog", etc.)
 - User-friendly interface for easy operation
+
+## Deployed version for testing
+https://ironhack-project-2-g4.benpaffrath.de/
