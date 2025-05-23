@@ -126,6 +126,14 @@ def lambda_handler(event, context):
             - headers: CORS and other HTTP headers
             - body: JSON string containing predictions or error message
     """
+    # Handle OPTIONS request for CORS preflight
+    if event.get('httpMethod') == 'OPTIONS':
+        return {
+            'statusCode': 200,
+            'headers': CORS_HEADERS,
+            'body': ''
+        }
+
     try:
         # Validate and extract image data from request
         if 'body' in event:
